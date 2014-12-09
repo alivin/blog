@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
   def index
-    #@articles = Article.all
     #@users = User.all
     #@user = User.find(1)
     @articles = Article.order(:title).page params[:page]
