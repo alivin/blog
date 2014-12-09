@@ -1,0 +1,10 @@
+<% provide(:title, @article.title) %>
+<div class="content">
+  <div class="title"><%= @article.title %></div>
+  <div class="text">
+    <%= @article.content %>
+    <div class="img">
+      <%= image_tag @article.avatar.url if @article.avatar? %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<% @articles.each do |article| %>
+    <div class="feed_article">
+      <%= article.title %>
+      <%= article.content %>
+      <%= image_tag article.avatar.url if article.avatar? %>
+    </div>
+<% end%>
