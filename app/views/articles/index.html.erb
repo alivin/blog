@@ -1,15 +1,10 @@
 <% provide(:title, 'articles - alivin') %>
-<div class="content">
-  <ul class="posts">
-    <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article %>
-      <% if logged_in? %>
-          <%= link_to 'edit', edit_article_path(article) %><%= link_to 'delete', article_path(article), method: :delete, data: { confirm: "Are you sure?" } %>
-      <% end %>
-      <span><%= article.created_at.strftime("%d %b %Y") %></span>
-    </li>
-    <% end %>
-  </ul>
-</div>
 <%= paginate @articles %>
+<div class="row marketing">
+  <% @articles.each do |article| %>
+      <div class="col-lg-6">
+        <h4><%= link_to article.title, article %></h4>
+        <p>Text contains presences the text.</p>
+      </div>
+  <% end %>
+</div>

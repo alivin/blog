@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   resources :articles
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
+  get 'signout' => 'sessions#destroy'
+  get 'signup' => 'users#new'
+  get 'about' => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
+
   match '/help',    to: 'static_pages#help',     via: 'get'
-  match '/about',   to: 'static_pages#about',    via: 'get'
-  match '/contact', to: 'static_pages#contact', via: 'get'
   match '/feed',    to: 'static_pages#feed',     via: 'get'
   match '/new',     to: 'articles#new',           via: 'get'
   match '/create',  to: 'articles#create',       via: 'post'
