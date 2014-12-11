@@ -1,14 +1,15 @@
 <%= provide(:title, 'new article - alivin') %>
+<div class="context-row">
 new article
 <%= form_for @article, url: articles_path, :html => { :multipart => true } do |f| %>
     <p>
       <%= f.label :title %>&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.text_field :title %>
+      <%= f.text_field :title, class: "title" %>
     </p>
 
     <p>
       <%= f.label :content %>
-      <%= f.text_area :content %>
+      <%= f.cktext_area :content %>
     </p>
 
     <p class="avatar">
@@ -21,6 +22,7 @@ new article
       <%= f.submit "Post", class: "btn" %>
     </p>
 <% end %>
+</div>
 
 <script type="text/javascript">
   $('#article_avatar').bind('change', function(){

@@ -1,22 +1,19 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  resources :users
-
   root 'static_pages#home'
-  resources :static_pages
+  resources :users
   resources :articles
-  get 'login' => 'sessions#new'
-  post 'login' => 'sessions#create'
-  get 'signout' => 'sessions#destroy'
-  get 'signup' => 'users#new'
-  get 'about' => 'static_pages#about'
-  get 'contact' => 'static_pages#contact'
 
-  match '/help',    to: 'static_pages#help',     via: 'get'
-  match '/feed',    to: 'static_pages#feed',     via: 'get'
-  match '/new',     to: 'articles#new',           via: 'get'
-  match '/create',  to: 'articles#create',       via: 'post'
+  get   'about'   => 'static_pages#about'
+  get   'help'    => 'static_pages#help'
+  get   'feed'    => 'static_pages#feed'
+
+  get     'signup'  => 'users#new'
+  get     'login'   => 'sessions#new'
+  post    'login'   => 'sessions#create'
+  delete  'logout'  => 'sessions#destroy'
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
