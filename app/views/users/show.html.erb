@@ -10,5 +10,18 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>Avatar:</strong>
+  <%= image_tag(@user.avatar) %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+<style>
+  img {
+      width: 96px;
+  }
+</style>
+
+<br>
+<%= link_to "manage my blog", manage_path %>

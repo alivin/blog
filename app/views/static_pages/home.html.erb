@@ -2,9 +2,13 @@
 
 <div class="row marketing">
   <% @articles.each do |article| %>
-      <div class="col-lg-6">
-        <h4><%= link_to article.title, article %> </h4>
-        <p>Text contains presences the text.</p>
+      <div class="context" style="padding-bottom: 20px">
+          <div class="title">
+            <h4><%= link_to article.title, article %> </h4>
+          </div>
+          <div class="content">
+            <%= article.content.html_safe %>
+          </div>
       </div>
   <% end %>
 </div>

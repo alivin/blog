@@ -1,0 +1,17 @@
+<% provide(:title, 'Manage') %>
+<table class="table">
+  <tr><th>id</th><th>title</th><th>settings</th></tr>
+  <% @articles.each do |article| %>
+  <tr>
+    <td><%= article.id %></td>
+    <td><%= article.title %></td>
+    <td>
+      <%= link_to "show", article %>
+      <%= link_to "edit", edit_article_path(article) %>
+      <%= link_to "delete", article, method: :delete, data: { confirm: "You sure?" } %>
+    </td>
+  </tr>
+  <% end %>
+
+
+</table>

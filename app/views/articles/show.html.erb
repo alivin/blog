@@ -1,8 +1,9 @@
 <% provide(:title, @article.title) %>
 <div class="content">
-  <div class="title"><%= @article.title %></div>
+  <div class="title" style="text-align: center"><h4><%= link_to @article.title %></h4></div>
+  <div style="text-align: right; margin-bottom: 5px"><%= @article.created_at.strftime("%d %b %Y") %></div>
   <div class="text">
-    <%= @article.content %>
+    <%= @article.content.html_safe %>
     <div class="img">
       <%= image_tag @article.avatar.url if @article.avatar? %>
     </div>

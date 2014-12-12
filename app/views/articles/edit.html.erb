@@ -1,15 +1,5 @@
 <%= provide(:title, "upldate - alivin") %>
-<%= form_for(@article) do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-    <%= f.label :image %>
-    <%= f.file_field :avatar, accept: 'image/jpeg image/gif image/png' %>
-
-    <%= f.submit "Save changes" %>
-<% end %>
+<%= render 'form' %>
 
 <script type="text/javascript">
     $('#article_avatar').bind('change', function(){

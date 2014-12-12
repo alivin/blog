@@ -1,27 +1,7 @@
 <%= provide(:title, 'new article - alivin') %>
 <div class="context-row">
 new article
-<%= form_for @article, url: articles_path, :html => { :multipart => true } do |f| %>
-    <p>
-      <%= f.label :title %>&nbsp;&nbsp;&nbsp;&nbsp;
-      <%= f.text_field :title, class: "title" %>
-    </p>
-
-    <p>
-      <%= f.label :content %>
-      <%= f.cktext_area :content %>
-    </p>
-
-    <p class="avatar">
-      <%= f.file_field :avatar, accept: 'image/jpeg image/gif image/png' %>
-      <%= f.hidden_field :avatar_cache %>
-    </p>
-
-    <p>
-
-      <%= f.submit "Post", class: "btn" %>
-    </p>
-<% end %>
+<%= render 'form' %>
 </div>
 
 <script type="text/javascript">

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   root 'static_pages#home'
   resources :users
   resources :articles
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
   get     'login'   => 'sessions#new'
   post    'login'   => 'sessions#create'
   delete  'logout'  => 'sessions#destroy'
+
+  get 'manage' => 'articles#manage'
 
 
 

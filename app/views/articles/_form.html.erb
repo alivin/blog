@@ -1,0 +1,21 @@
+<%= form_for @article, :html => { :multipart => true } do |f| %>
+    <p>
+      <%= f.label :title %>&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= f.text_field :title, class: "title" %>
+    </p>
+
+    <p>
+      <%= f.label :content %>
+      <%= f.cktext_area :content %>
+    </p>
+
+    <p class="avatar">
+      <%= f.file_field :avatar, accept: 'image/jpeg image/gif image/png' %>
+      <%= f.hidden_field :avatar_cache %>
+    </p>
+
+    <p>
+
+      <%= f.submit "Post", class: "btn" %>
+    </p>
+<% end %>
